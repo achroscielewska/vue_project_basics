@@ -1,39 +1,58 @@
 <template>
-    <div class="container">
-        <app-header></app-header>
-        <hr class="test">
-        <div class="row">
-            <app-servers></app-servers>
-            <app-server-details></app-server-details>
-        </div>
-        <hr>
-        <app-footer></app-footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <button @click="selectedComponent = 'appQuote'">Quote</button>
+        <button @click="selectedComponent = 'appAuthor'">Author</button>
+        <button @click="selectedComponent = 'appNew'">New</button>
+        <hr />
+        <p>{{ selectedComponent }}</p>
+        <keep-alive>
+          <component :is="selectedComponent">
+            <p>Default content</p>
+          </component>
+        </keep-alive>
+
+        <!-- <appQuote>
+          <h2 slot="title">{{ quoteTitle }}</h2>
+          <p>W wonderful Quote</p>
+        </appQuote>
+        <appAuthor></appAuthor>
+        <appNew></appNew> -->
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
-    import Header from './Shared/Header.vue';
-    import Footer from './Shared/Footer.vue';
-    import Servers from './Server/Servers.vue';
-    import ServerDetails from './Server/ServerDetails.vue';
-
-    export default {
-        components: {
-            'app-header': Header,
-            'app-servers': Servers,
-            'app-server-details': ServerDetails,
-            'app-footer': Footer
-        }
-    }
+import Quote from "./components/Quote.vue";
+import Author from "./components/Author.vue";
+import New from "./components/New.vue";
+export default {
+  data: function() {
+    return {
+      quoteTitle: "The Quote",
+      selectedComponent: "appQuote"
+    };
+  },
+  components: {
+    appQuote: Quote,
+    appAuthor: Author,
+    appNew: New
+  }
+};
 </script>
 
 <style lang="scss">
-@import 'assets/breakpoints';
+@import "assets/breakpoints";
 
-@media (min-width: $md) {
- .test{
-   border-top: 1px solid red;
- }
+h2 {
+  color: blueviolet;
 }
 
+@media (min-width: $md) {
+  .test {
+    border-top: 1px solid red;
+  }
+}
 </style>
