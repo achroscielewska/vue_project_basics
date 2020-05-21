@@ -9,7 +9,7 @@
 import { mapMutations } from 'vuex';
 export default {
   methods: {
-    ...mapMutations(['simpleIncrement', 'decrement'])
+    ...mapMutations('counter', ['simpleIncrement', 'decrement'])
   }
 };
 </script>
