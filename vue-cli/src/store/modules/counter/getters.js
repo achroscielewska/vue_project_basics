@@ -1,7 +1,9 @@
-export const doubleCounter = state => {
-  return state.conuter * 4;
-};
+export default {
+  doubleCounter: state => {
+    return state.conuter * 4;
+  },
+  stringCounter: state => {
+    return state.conuter + ' Clicks';
+  }
+}
 
-export const stringCounter = state => {
-  return state.conuter + ' Clicks';
-};

@@ -1,15 +1,15 @@
-const increment = ({ commit })  => {
-  commit('simpleIncrement');
-};
+export default {
+  increment: ({ commit }) => {
+    commit('simpleIncrement');
+  },
+  decrement: ({ commit }) => {
+    commit('decrement');
+  },
+  asyncIncrement: ({ commit }, payload) => {
+    setTimeout(() => { commit('increment', payload); }, 1000)
+  },
+  asyncDecrement: context => {
+    setTimeout(() => { context.commit('decrement'); }, 1000)
+  }
+}
 
-const decrement = ({ commit })  => {
-  commit('decrement');
-};
-
-const asyncIncrement = ({ commit }, payload) => {
-  setTimeout(() => { commit('increment', payload); }, 1000)
-};
-
-const asyncDecrement = context => {
-  setTimeout(() => { context.commit('decrement'); }, 1000)
-};

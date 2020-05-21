@@ -1,6 +1,6 @@
-import * as getters from './getters';
-import * as mutations from './mutations';
-import * as actions from './actions';
+import getters from './getters';
+import mutations from './mutations';
+import actions from './actions';
 
 const state = {
   conuter: 0
