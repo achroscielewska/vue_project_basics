@@ -1,15 +1,24 @@
 <template>
   <div id="app">
-   <h1>TEST</h1>
+    <app-header />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {
+import Header from "./components/header/header.vue";
 
-}
+export default {
+  components: {
+    "app-header": Header
+  }
+};
 </script>
 
 <style lang="scss">
-
+body,
+html {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 </style>
