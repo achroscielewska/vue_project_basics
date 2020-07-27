@@ -2,7 +2,7 @@
   "name": "vue-cli",
   "description": "A Vue.js project",
   "version": "1.0.0",
-  "author": "achroscielewska <agnieszka.chroscielewska@altkomsoftware.pl>",
+  "author": "achroscielewska",
   "license": "MIT",
   "private": true,
   "scripts": {
